@@ -1,0 +1,24 @@
+probe nd_syscall.adjtimex, nd_syscall.compat_adjtimex ?
+{
+	printf("%s (pid=%d) %s\n", execname(),pid(),pp())
+}
+
+probe nd_syscall.clock_adjtime ?
+{
+	printf("%s (pid=%d) %s\n", execname(),pid(),pp())
+}
+
+probe nd_syscall.settimeofday ?
+{
+	printf("%s (pid=%d) %s\n", execname(),pid(),pp())
+}
+
+probe nd_syscall.stime ?
+{
+	printf("%s (pid=%d) %s\n", execname(),pid(),pp())
+}
+
+probe nd_syscall.clock_settime ?
+{
+	printf("%s (pid=%d) %s\n", execname(),pid(),pp())
+}
